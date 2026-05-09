@@ -17,11 +17,14 @@ export function Card({
   return (
     <div
       className={`
-        rounded-2xl border p-6 transition-all duration-300
+        rounded-2xl border p-6
+        transition-all duration-300
+        cursor-default
+
         ${
           variant === "elevated"
-            ? "bg-white shadow-lg border-gray-200 hover:shadow-xl"
-            : "bg-white shadow-sm border-gray-200 hover:shadow-md"
+            ? "bg-white shadow-lg border-gray-200 hover:shadow-xl hover:-translate-y-1"
+            : "bg-white shadow-sm border-gray-200 hover:shadow-md hover:-translate-y-1"
         }
       `}
     >

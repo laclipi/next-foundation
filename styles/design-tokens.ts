@@ -4,17 +4,25 @@
 // En proyectos SaaS reales esto evita caos de estilos.
 
 export const spacing = {
-  section: "py-16 lg:py-20",
-  sectionCompact: "py-12 lg:py-16",
-  hero: "py-24 lg:py-28",
+  hero: "py-20 lg:py-24",
+  section: "py-14 lg:py-18",
+  sectionCompact: "py-10 lg:py-14",
 }
+
+// Typography system
+// ------------------
+// Definimos jerarquía clara y reutilizable
 
 export const text = {
   h1: "text-4xl lg:text-6xl font-bold tracking-tight text-gray-900",
-  h2: "text-3xl font-semibold text-gray-900",
-  body: "text-base lg:text-lg text-gray-600",
-  small: "text-sm text-gray-600",
+  h2: "text-2xl lg:text-3xl font-semibold text-gray-900",
+  body: "text-base lg:text-lg text-gray-600 leading-relaxed",
+  small: "text-sm text-gray-600 leading-relaxed",
 }
+
+// Layout system
+// -------------
+// Evitamos inconsistencias en ancho de contenido
 
 export const container = {
   base: "max-w-6xl mx-auto px-4",
