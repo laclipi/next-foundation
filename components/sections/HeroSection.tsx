@@ -17,7 +17,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* LEFT CONTENT */}
-          <div className="space-y-8">
+         <div className="space-y-6 lg:space-y-8">
 
             {/* BADGE */}
             <div className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-1 text-sm text-gray-600 shadow-sm">
