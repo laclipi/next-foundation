@@ -1,36 +1,22 @@
-import { Container } from "@/components/ui/Container"
-import { Section } from "@/components/ui/Section"
-import { Card } from "@/components/ui/Card"
-import { Button } from "@/components/ui/Button"
-
+import { HeroSection } from "@/components/sections/HeroSection"
+import { FeaturesSection } from "@/components/sections/FeaturesSection"
+import { ServicesSection } from "@/components/sections/ServicesSection"
+import { Navbar } from "@/components/layout/Navbar"
+import { RootLayout } from "@/components/layout/RootLayout"
+// Page composition layer
+// This file only orchestrates sections (no styling logic here)
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <Container>
-        <Section
-          title="Next Foundation"
-          description="UI system initialized for professional workflow"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card title="Performance">
-              Optimized rendering structure
-            </Card>
+    <RootLayout>
 
-            <Card title="Scalability">
-              Reusable UI components system
-            </Card>
+      <Navbar />
 
-            <Card title="Architecture">
-              Clean modular design
-            </Card>
-          </div>
+      <HeroSection />
 
-          <div className="flex gap-3">
-            <Button>Primary Action</Button>
-            <Button variant="secondary">Secondary</Button>
-          </div>
-        </Section>
-      </Container>
-    </main>
+      <FeaturesSection />
+
+      <ServicesSection />
+
+    </RootLayout>
   )
 }
