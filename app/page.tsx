@@ -1,10 +1,14 @@
 import { HeroSection } from "@/components/sections/HeroSection"
 import { FeaturesSection } from "@/components/sections/FeaturesSection"
 import { ServicesSection } from "@/components/sections/ServicesSection"
+import { Navbar } from "@/components/layout/Navbar"
+import { RootLayout } from "@/components/layout/RootLayout"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <RootLayout>
+
+      <Navbar />
 
       <HeroSection />
 
@@ -12,6 +16,6 @@ export default function Home() {
 
       <ServicesSection />
 
-    </main>
+    </RootLayout>
   )
 }
