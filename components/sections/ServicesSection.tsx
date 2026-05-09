@@ -11,39 +11,39 @@ export function ServicesSection() {
   return (
     <section className="bg-white border-t border-gray-100">
 
-      <div className={spacing.section}>
-        <Container>
+      <Container className={spacing.section}>
 
-          {/* HEADER DE SECCIÓN */}
-          <div className="text-center mb-10 space-y-2">
-            <h2 className={text.h2}>
-              Servicios
-            </h2>
+        {/* HEADER */}
+        <div className="text-center mb-10 space-y-2">
 
-            <p className={text.body}>
-              Soluciones principales del producto
-            </p>
-          </div>
+          <h2 className={text.h2}>
+            Servicios
+          </h2>
 
-          {/* GRID DE CARDS */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <p className={text.body}>
+            Soluciones principales del producto
+          </p>
 
-            <Card title="Desarrollo Web" variant="elevated">
-              Creación de sitios web modernos y escalables
-            </Card>
+        </div>
 
-            <Card title="SEO">
-              Mejora de posicionamiento en motores de búsqueda
-            </Card>
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            <Card title="Automatización">
-              Optimización de procesos empresariales
-            </Card>
+          <Card title="Desarrollo Web" variant="elevated">
+            Creación de sitios web modernos y escalables
+          </Card>
 
-          </div>
+          <Card title="SEO">
+            Mejora de posicionamiento en motores de búsqueda
+          </Card>
 
-        </Container>
-      </div>
+          <Card title="Automatización">
+            Optimización de procesos empresariales
+          </Card>
+
+        </div>
+
+      </Container>
 
     </section>
   )

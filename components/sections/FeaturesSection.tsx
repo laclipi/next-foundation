@@ -11,39 +11,39 @@ export function FeaturesSection() {
   return (
     <section className="bg-gradient-to-b from-white to-gray-50">
 
-      <div className={spacing.sectionCompact}>
-        <Container>
+      <Container className={spacing.sectionCompact}>
 
-          {/* HEADER */}
-          <div className="text-center mb-10 space-y-2">
-            <h2 className={text.h2}>
-              Next Foundation
-            </h2>
+        {/* HEADER */}
+        <div className="text-center mb-10 space-y-2">
 
-            <p className={text.body}>
-              UI system initialized for professional workflow
-            </p>
-          </div>
+          <h2 className={text.h2}>
+            Next Foundation
+          </h2>
 
-          {/* GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <p className={text.body}>
+            UI system initialized for professional workflow
+          </p>
 
-            <Card title="Performance">
-              Optimized rendering structure
-            </Card>
+        </div>
 
-            <Card title="Scalability">
-              Reusable UI components system
-            </Card>
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-            <Card title="Architecture">
-              Clean modular design
-            </Card>
+          <Card title="Performance">
+            Optimized rendering structure
+          </Card>
 
-          </div>
+          <Card title="Scalability">
+            Reusable UI components system
+          </Card>
 
-        </Container>
-      </div>
+          <Card title="Architecture">
+            Clean modular design
+          </Card>
+
+        </div>
+
+      </Container>
 
     </section>
   )

@@ -5,13 +5,17 @@
 
 export const spacing = {
   hero: "py-20 lg:py-24",
-  section: "py-14 lg:py-18",
-  sectionCompact: "py-10 lg:py-14",
+
+  // Sección estándar (equilibrada)
+  section: "py-12 lg:py-16",
+
+  // Sección compacta (más densidad, UI tipo SaaS real)
+  sectionCompact: "py-8 lg:py-12",
 }
 
 // Typography system
 // ------------------
-// Definimos jerarquía clara y reutilizable
+// Jerarquía tipográfica consistente
 
 export const text = {
   h1: "text-4xl lg:text-6xl font-bold tracking-tight text-gray-900",
@@ -22,7 +26,7 @@ export const text = {
 
 // Layout system
 // -------------
-// Evitamos inconsistencias en ancho de contenido
+// Contenedor central del sistema
 
 export const container = {
   base: "max-w-6xl mx-auto px-4",
