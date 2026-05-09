@@ -4,13 +4,13 @@
 // En proyectos SaaS reales esto evita caos de estilos.
 
 export const spacing = {
-  hero: "py-20 lg:py-24",
+  hero: "py-20 lg:py-28",
 
   // Sección estándar (equilibrada)
-  section: "py-12 lg:py-16",
+  section: "py-16 lg:py-20",
 
   // Sección compacta (más densidad, UI tipo SaaS real)
-  sectionCompact: "py-8 lg:py-12",
+  sectionCompact: "py-12 lg:py-16",
 }
 
 // Typography system

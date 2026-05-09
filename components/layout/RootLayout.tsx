@@ -3,22 +3,16 @@ import { ReactNode } from "react"
 // RootLayout
 // ----------
 // Layout global del sistema UI.
-//
-// Objetivo:
-// - unificar spacing vertical
-// - definir ancho máximo consistente
-// - crear ritmo visual SaaS real
+// Define el frame base del producto.
 
 export function RootLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-gray-50">
 
-      {/* CONTENEDOR GLOBAL DE FLUJO */}
-      <div className="flex flex-col">
-
+      {/* APP FRAME */}
+      <main className="flex flex-col">
         {children}
-
-      </div>
+      </main>
 
     </div>
   )
