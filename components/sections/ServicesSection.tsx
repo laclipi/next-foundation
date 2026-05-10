@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "@/components/ui/Container";
 import { spacing, text } from "@/styles/design-tokens";
 import { cms } from "@/cms/mockContent";
@@ -11,7 +11,51 @@ import { cms } from "@/cms/mockContent";
 // Aquí mostramos capacidades principales del sistema.
 
 export function ServicesSection() {
-  const [services] = useState(cms.services.items);
+  const [services, setServices] = useState(cms.services.items);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const loadServices = async () => {
+      try {
+        const response = await fetch("/api/services");
+
+        if (!response.ok) {
+          throw new Error("API error");
+        }
+
+        const data = await response.json();
+        setServices(data.items);
+      } catch (error) {
+        console.error("Failed to fetch services", error);
+        setError("Failed to load services");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadServices();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="bg-white border-t border-gray-100">
+        <Container className={spacing.section}>
+          <p className="text-gray-500">Loading services...</p>
+        </Container>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="bg-white border-t border-gray-100">
+        <Container className={spacing.section}>
+          <p className="text-red-500">{error}</p>
+        </Container>
+      </section>
+    );
+  }
 
   return (
     <section className="bg-white border-t border-gray-100">
