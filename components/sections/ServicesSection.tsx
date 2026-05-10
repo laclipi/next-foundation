@@ -17,7 +17,9 @@ export function ServicesSection() {
   useEffect(() => {
     const loadServices = async () => {
       try {
-        const response = await fetch("/api/services");
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/services`,
+        );
         const data = await response.json();
 
         setServices(data.items);
