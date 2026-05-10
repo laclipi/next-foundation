@@ -25,7 +25,12 @@ export function FeaturesSection() {
           {cms.features.items.map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="
+                rounded-2xl border border-gray-200 bg-white p-6
+                shadow-sm
+                transition-all duration-300
+                hover:shadow-md hover:-translate-y-1
+              "
             >
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {item.title}

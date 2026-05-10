@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { Container } from "@/components/ui/Container";
 import { spacing, text } from "@/styles/design-tokens";
@@ -17,11 +18,13 @@ export function ServicesSection() {
   useEffect(() => {
     const loadServices = async () => {
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/services`,
-        );
-        const data = await response.json();
+        const response = await fetch("/api/services");
 
+        if (!response.ok) {
+          throw new Error("API error");
+        }
+
+        const data = await response.json();
         setServices(data.items);
       } catch (error) {
         console.error("Failed to fetch services", error);
@@ -30,6 +33,7 @@ export function ServicesSection() {
         setLoading(false);
       }
     };
+
     loadServices();
   }, []);
 
