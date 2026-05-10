@@ -12,6 +12,7 @@ import { cms } from "@/cms/mockContent";
 export function ServicesSection() {
   const [services, setServices] = useState(cms.services.items);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const loadServices = async () => {
@@ -22,12 +23,33 @@ export function ServicesSection() {
         setServices(data.items);
       } catch (error) {
         console.error("Failed to fetch services", error);
+        setError("Failed to load services");
       } finally {
         setLoading(false);
       }
     };
     loadServices();
   }, []);
+
+  if (loading) {
+    return (
+      <section className="bg-white border-t border-gray-100">
+        <Container className={spacing.section}>
+          <p className="text-gray-500">Loading services...</p>
+        </Container>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="bg-white border-t border-gray-100">
+        <Container className={spacing.section}>
+          <p className="text-red-500">{error}</p>
+        </Container>
+      </section>
+    );
+  }
 
   return (
     <section className="bg-white border-t border-gray-100">
