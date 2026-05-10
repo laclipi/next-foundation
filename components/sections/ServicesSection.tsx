@@ -1,6 +1,5 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "@/components/ui/Container";
 import { spacing, text } from "@/styles/design-tokens";
 import { cms } from "@/cms/mockContent";
@@ -11,7 +10,24 @@ import { cms } from "@/cms/mockContent";
 // Aquí mostramos capacidades principales del sistema.
 
 export function ServicesSection() {
-  const [services] = useState(cms.services.items);
+  const [services, setServices] = useState(cms.services.items);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadServices = async () => {
+      try {
+        const response = await fetch("/api/services");
+        const data = await response.json();
+
+        setServices(data.items);
+      } catch (error) {
+        console.error("Failed to fetch services", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadServices();
+  }, []);
 
   return (
     <section className="bg-white border-t border-gray-100">
